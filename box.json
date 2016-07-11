@@ -3,8 +3,8 @@
 	"description": "Gooey page loader based on CSS keyframes and SVG GaussianBlur",
 	"author": "Dicson",
 	"author-email": "dicson.deepak@krds.fr",
-	"image": "",
-	"gif": "",
+	"image": "img/packshot.png",
+	"gif": "img/packshot.gif",
 	"tags": "gooey, loader, filter",
 	"repo-url": "https://github.com/krdsbox/gooey-loader"
 }
