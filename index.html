@@ -3,10 +3,22 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Box Starter</title>
+	<title>Gooey Loader</title>
 	<link rel="icon" href="./favicon.png">
 	<link rel="stylesheet" href="style/box.css">
 	<link rel="stylesheet" href="style/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Baloo+Da" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+	<style type="text/css">
+		.loading {
+			-webkit-filter: url("#goo");
+			filter: url("#goo");
+		}
+		.bubbles-splite {
+			-webkit-filter: url("#gooey");
+			filter: url("#gooey");
+		}
+	</style>
 </head>
 <body>
 	<nav class="boxActions">
@@ -20,8 +32,69 @@
 			<img src="img/github.svg" alt="Github" />
 		</a>
 	</nav>
-	<h1>Box Starter</h1>
-	<p>An optional &amp; minimal starter kit for krdsbox components</p>
-	<script src="js/main.js"></script>
+
+	<h1>Gooey Loader</h1>
+	<p>Gooey page loader based on CSS keyframes and SVG GaussianBlur</p>
+	<input type="radio" id="tab-1" name="show" checked/>
+	<input type="radio" id="tab-2" name="show" />
+	<input type="radio" id="tab-3" name="show" />
+	<input type="radio" id="tab-4" name="show" />
+	<div class="tab">
+		<label for="tab-1">Demo 1</label>
+		<label for="tab-2">Demo 2</label>
+		<label for="tab-3">Demo 3</label>
+		<label for="tab-4">Demo 4</label>
+	</div>
+
+	<div id="content" class="content">
+		<!-- Loader 1 -->
+		<div id="demo-1" class="loading loading1">
+			<span>Loading</span>
+		</div>
+
+		<!-- Loader 2 -->
+		<div id="demo-2" class="bubbles-splite loading2">
+			<span></span>
+			<span>L</span>
+			<span>O</span>
+			<span>A</span>
+			<span>D</span>
+			<span>I</span>
+			<span>N</span>
+			<span>G</span>
+		</div>
+
+		<!-- Loader 3 -->
+		<div id="demo-3" class="loading loading3">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+
+		<!-- Loader 4 -->
+		<div id="demo-4" class="loading loading4">
+			<div class="shape-1"><span></span></div>
+		</div>
+	</div>
+
+	<!-- svg gooey mask -->
+	<svg class="maskSVG" xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<defs>
+			<filter id="goo">
+				<feGaussianBlur in="SourceGraphic" stdDeviation="6.3" result="blur" />
+				<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 14 -4" result="goo" />
+				<feBlend in="SourceGraphic" in2="goo" />
+			</filter>
+			<filter id="gooey">
+				<feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+				<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 14 -4" result="gooey" />
+				<feBlend in="SourceGraphic" in2="gooey" />
+			</filter>
+		</defs>
+	</svg>
 </body>
 </html>
